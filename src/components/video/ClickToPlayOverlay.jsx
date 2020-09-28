@@ -92,7 +92,7 @@ export default function ClickToPlayOverlay({ show, onClick }) {
         <Mute />
         <ClickToUnmuteText>Click para escuchar</ClickToUnmuteText>
       </NoSoundDisclaimer>
-      <PlayButton width={{ _: '50px', sm: '80px', md: '120px', lg: '100px' }} />
+      <PlayButton width={{ _: '60px', sm: '80px', md: '120px', lg: '100px' }} />
     </ClickToPlayOverlayWrapper>
   );
 }

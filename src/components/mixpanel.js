@@ -1,6 +1,6 @@
 import mixpanel from "mixpanel-browser";
 
-mixpanel.init("TBD");
+mixpanel.init("4YqZZTyEGtLLTo99cqSJ");
 
 const env_check = true;
 // const env_check = process.env.NODE_ENV === "production";

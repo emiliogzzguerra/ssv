@@ -106,7 +106,9 @@ export default function ContactoDiputado() {
         </Section>
         <Separator />
         <Section>
-          <Title level={3}>Correo de ejemplo</Title>
+          <Title level={3} style={{ marginTop: '20px' }}>
+            Correo de ejemplo
+          </Title>
           <Text type="small">
             <Markdown>
               {`

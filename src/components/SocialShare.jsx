@@ -10,20 +10,21 @@ const ShareList = styled.div`
   ${flexrow}
   justify-content: space-around;
   align-items: center;
+  max-width: 500px;
 `;
 
 export default function SocialShare({ links }) {
   return (
     <ShareList>
       <FacebookIcon
-        size={'2rem'}
+        size={'4rem'}
         round
         onClick={() => {
           window.open(links.facebook);
         }}
       />
       <TwitterIcon
-        size={'2rem'}
+        size={'4rem'}
         round
         onClick={() => {
           window.open(links.twitter);
@@ -31,7 +32,7 @@ export default function SocialShare({ links }) {
       />
 
       <WhatsappIcon
-        size={'2rem'}
+        size={'4rem'}
         round
         onClick={() => {
           window.open(links.whatsapp);
@@ -39,7 +40,7 @@ export default function SocialShare({ links }) {
       />
 
       <LinkedinIcon
-        size={'2rem'}
+        size={'4rem'}
         round
         onClick={() => {
           window.open(links.linkedin);
@@ -47,7 +48,7 @@ export default function SocialShare({ links }) {
       />
 
       <EmailIcon
-        size={'2rem'}
+        size={'4rem'}
         round
         onClick={() => {
           window.open(links.email);

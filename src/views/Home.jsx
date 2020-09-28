@@ -23,7 +23,7 @@ import BaseCard from '../components/Card';
 import StatusCard from '../components/StatusCard';
 import SegmentedStatus from '../components/SegmentedStatus';
 import SocialShare from '../components/SocialShare';
-import { ReactComponent as call } from '../static/svg/call.svg';
+import { ReactComponent as mail } from '../static/svg/mail.svg';
 
 const VideoWrapper = styled.div`
   ${layout};
@@ -43,7 +43,7 @@ const CustomImage = styled(Image)`
   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
 `;
 
-const CallIcon = styled(call)`
+const MailIcon = styled(mail)`
   width: 100px;
   height: auto;
   fill: ${co.accentColor};
@@ -107,7 +107,7 @@ export default function Home() {
               loop={1}
               config={{
                 playerVars: {
-                  start: 52,
+                  start: 70,
                   modestbranding: 1,
                   showinfo: 0,
                   cc_load_policy: 1,
@@ -147,11 +147,12 @@ Por último, que estas protecciones sean retroactivas a la fecha en que empezó 
           <Title level={2}>Conoce la propuesta</Title>
 
           <Accordion
+            firstOneActive
             lista={[
               {
                 header: 'PROPUESTA POR EL BIEN DE LA PATRIA Y LA HUMANIDAD',
                 body: (
-                  <>
+                  <AccordionItemWrapper>
                     <CustomImage src="https://ssvmx.s3.us-east-2.amazonaws.com/doc2.png" />
                     <Text type="small" style={{ marginTop: '20px' }}>
                       La presente propuesta está dirigida a la H. Cámara de Diputados expresando las
@@ -171,7 +172,7 @@ Por último, que estas protecciones sean retroactivas a la fecha en que empezó 
                     >
                       Ver documento
                     </Button>
-                  </>
+                  </AccordionItemWrapper>
                 ),
                 customBody: true,
               },
@@ -233,11 +234,16 @@ Por último, que estas protecciones sean retroactivas a la fecha en que empezó 
           <StyledImage src="https://ssvmx.s3.us-east-2.amazonaws.com/Change.org_.png" />
           <SocialShare
             links={{
-              facebook: '',
-              twitter: '',
-              whatsapp: '',
-              linkedin: '',
-              email: '',
+              facebook: 'https://www.facebook.com/sharer/sharer.php?u=http://chng.it/JFRyxnRqDp',
+              twitter:
+                'https://twitter.com/home?status=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽',
+              whatsapp: encodeURI(
+                `whatsapp://send?text=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽`,
+              ),
+              linkedin:
+                'https://www.linkedin.com/shareArticle?mini=true&url=http://chng.it/JFRyxnRqDp&title=&summary=¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽&source=',
+              email:
+                'mailto:info@example.com?&subject=&body=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽',
             }}
           />
           <Title level={3} styles={{ marginTop: '40px' }}>
@@ -247,7 +253,7 @@ Por último, que estas protecciones sean retroactivas a la fecha en que empezó 
             Si te encuentras interesado en la propuesta puedes compartir con tu familia/amigos
             nuestra página de Change.org aquí.
           </Text>
-          <CallIcon />
+          <MailIcon />
           <Button type="green" link={new pLink('/contacto-diputado', false, true)}>
             Encuentra y contacta a tu diputado aquí
           </Button>

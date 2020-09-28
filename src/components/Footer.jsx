@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { co, flexrow, flexcenter, mq } from '../styles/theme';
 import Text from './text/Text';
 import { space, layout } from 'styled-system';
+import { MailOutlined } from '@ant-design/icons';
 
 const StyledFooter = styled.div`
   background-color: ${({ color }) => (color ? color : co.gray1)};
@@ -56,13 +57,27 @@ const Footer = ({ light, color, fontColor }) => (
         <Text
           marginTop={10}
           width={'100vw'}
-          color={fontColor ? fontColor : co.primaryColor}
+          color={fontColor ? fontColor : co.accentColor}
           align="center"
-          light
+          medium
           marginless
         >
           SSV {currentYear}
         </Text>
+        <a href="mailto:hola@ssv.mx">
+          <Text
+            marginTop={10}
+            width={'100vw'}
+            color={fontColor ? fontColor : co.accentColor}
+            align="center"
+            medium
+            marginless
+            underline
+          >
+            <MailOutlined style={{ marginRight: '10px' }} />
+            hola@ssv.mx
+          </Text>
+        </a>
       </FinalSection>
     </Content>
   </StyledFooter>
