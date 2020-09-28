@@ -26,6 +26,7 @@ const StyledText = styled.p`
     return typographyStyles;
   }}
   ${({ level }) => (level ? getTypographySize(`h${level}`) : '')}
+  
   ${space}
   ${layout}
   ${({ styles }) => styles}

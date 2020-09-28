@@ -7,6 +7,7 @@ export const FONT_TYPES = {
   secondary: { font_size: 1, line_height: 2 },
   terciary: { font_size: 0.8, line_height: 2.2 },
   body: { font_size: 1.5, line_height: 2, margin_bottom: 35 },
+  small: { font_size: 1, line_height: 1.5, margin_bottom: 20 },
   
   // Convenient
   subheader: { font_size: 1.753, line_height: 1.3 },

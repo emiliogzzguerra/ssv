@@ -5,7 +5,7 @@ import Text from './text/Text';
 import { space, layout } from 'styled-system';
 
 const StyledFooter = styled.div`
-  background-color: ${({ color }) => (color ? color : co.primaryColor)};
+  background-color: ${({ color }) => (color ? color : co.gray1)};
   width: 100vw;
   height: fit-content;
   padding: 20px;
@@ -56,26 +56,13 @@ const Footer = ({ light, color, fontColor }) => (
         <Text
           marginTop={10}
           width={'100vw'}
-          color={fontColor ? fontColor : 'white'}
+          color={fontColor ? fontColor : co.primaryColor}
           align="center"
           light
           marginless
         >
-          Finauta {currentYear}
+          SSV {currentYear}
         </Text>
-        <FooterLinkText
-          marginLeft={{ _: '5px', xs: '15px', lg: '50px' }}
-          marginRight={[20]}
-          color={fontColor ? fontColor : 'white'}
-          align="center"
-          hovund
-          light
-        >
-          Aviso de privacidad
-        </FooterLinkText>
-        <FooterLinkText color={fontColor ? fontColor : 'white'} light hovund>
-          Términos y condiciones
-        </FooterLinkText>
       </FinalSection>
     </Content>
   </StyledFooter>

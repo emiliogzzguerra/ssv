@@ -11,8 +11,6 @@ const StyledImage = styled.img`
   ${layout}
 `;
 
-const GenericImage = ({ src, styles, type, ...rest }) => (
-  <StyledImage src={src} alt="image" {...rest} />
-);
+const Image = ({ src, styles, type, ...rest }) => <StyledImage src={src} alt="image" {...rest} />;
 
-export default GenericImage;
+export default Image;

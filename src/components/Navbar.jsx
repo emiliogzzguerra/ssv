@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { co, mq } from '../styles/theme';
+import { useHistory } from 'react-router';
 
 export const NAV_HEIGHT_MOBILE = 80;
 export const NAV_HEIGHT_MEDIUM = 65;
@@ -41,13 +42,18 @@ const TakeUpSpace = styled.div`
 `;
 
 const Navbar = () => {
+  const history = useHistory();
   return (
     <>
       <TakeUpSpace heights={[NAV_HEIGHT_MOBILE, NAV_HEIGHT_MOBILE, NAV_HEIGHT_DESKTOP]} />
-      <StyledHeader>
-        <span style={{ color: co.island1, display: 'contents' }}>S</span>olidaridad con los{' '}
-        <span style={{ color: co.island1, display: 'contents' }}>S</span>alvadores de{' '}
-        <span style={{ color: co.island1, display: 'contents' }}>V</span>idas
+      <StyledHeader
+        onClick={() => {
+          history.push('/');
+        }}
+      >
+        <span style={{ color: co.accentColor, display: 'contents' }}>S</span>olidaridad con los{' '}
+        <span style={{ color: co.accentColor, display: 'contents' }}>S</span>alvadores de{' '}
+        <span style={{ color: co.accentColor, display: 'contents' }}>V</span>idas
       </StyledHeader>
     </>
   );

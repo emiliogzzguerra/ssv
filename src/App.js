@@ -4,8 +4,10 @@ import { ThemeProvider } from 'emotion-theming';
 
 
 import './App.css';
-import Home from './views/Home';
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
+import Home from './views/Home';
+import ContactoDiputado from './views/ContactoDiputado';
 import theme from './styles/theme';
 
 
@@ -16,6 +18,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/' component={Home}/>
+        <Route exact path='/contacto-diputado' component={ContactoDiputado}/>
       </Switch>
     </Router>
     </ThemeProvider>
