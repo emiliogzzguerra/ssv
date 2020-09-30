@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
@@ -24,6 +24,7 @@ import StatusCard from '../components/StatusCard';
 import SegmentedStatus from '../components/SegmentedStatus';
 import SocialShare from '../components/SocialShare';
 import { ReactComponent as mail } from '../static/svg/mail.svg';
+import { Mixpanel } from '../components/mixpanel';
 
 const VideoWrapper = styled.div`
   ${layout};
@@ -92,6 +93,10 @@ const StyledImage = styled(Image)`
 `;
 
 export default function Home() {
+  useEffect(() => {
+    Mixpanel.track('New visitor');
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -236,14 +241,13 @@ Por último, que estas protecciones sean retroactivas a la fecha en que empezó 
             links={{
               facebook: 'https://www.facebook.com/sharer/sharer.php?u=http://chng.it/JFRyxnRqDp',
               twitter:
-                'https://twitter.com/home?status=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽',
-              whatsapp: encodeURI(
-                `whatsapp://send?text=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽`,
-              ),
+                'https://twitter.com/home?status=http://chng.it/JFRyxnRqDp Mexico 🇲🇽 es #1 en muertes del personal de la salud a nivel mundial 🥼(Amnistía Int.)Ayuda a compartir esta propuesta ciudadana para apoyar al personal de la salud.Si quieres ayudar, compártelo! Es tiempo de solidarizarnos',
+              whatsapp:
+                'whatsapp://send?text=Mexico%20%F0%9F%87%B2%F0%9F%87%BD%20es%20%231%20en%20muertes%20del%20personal%20de%20la%20salud%20a%20nivel%20mundial%20%F0%9F%A5%BC%28Amnist%C3%ADa%20Int.%29%0A%0AAyuda%20a%20compartir%20esta%20propuesta%20ciudadana%20para%20apoyar%20al%20personal%20de%20la%20salud.%20%0A%0AAqu%C3%AD%20la%20propuesta%3A%20http%3A%2F%2Fchng.it%2FJFRyxnRqDp%0A%0ASi%20quieres%20ayudar%2C%20comp%C3%A1rtelo%21%20Es%20tiempo%20de%20solidarizarnos',
               linkedin:
-                'https://www.linkedin.com/shareArticle?mini=true&url=http://chng.it/JFRyxnRqDp&title=&summary=¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽&source=',
+                'https://www.linkedin.com/shareArticle?mini=true&url=http://chng.it/JFRyxnRqDp&title=&summary=Mexico 🇲🇽 es #1 en muertes del personal de la salud a nivel mundial 🥼(Amnistía Int.)Ayuda a compartir esta propuesta ciudadana para apoyar al personal de la salud.Si quieres ayudar, compártelo! Es tiempo de solidarizarnos&source=',
               email:
-                'mailto:info@example.com?&subject=&body=http://chng.it/JFRyxnRqDp ¡Solidaridad con los Salvadores de Vidas! Para México: salud y fortaleza. Para el personal de la salud: justicia social y respeto nacional. 😷🇲🇽',
+                'mailto:info@example.com?&subject=&body=http://chng.it/JFRyxnRqDp Mexico 🇲🇽 es #1 en muertes del personal de la salud a nivel mundial 🥼(Amnistía Int.)Ayuda a compartir esta propuesta ciudadana para apoyar al personal de la salud.Si quieres ayudar, compártelo! Es tiempo de solidarizarnos',
             }}
           />
           <Title level={3} styles={{ marginTop: '40px' }}>
