@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Markdown from 'react-remarkable';
 
 import Footer from '../components/Footer';
@@ -11,6 +11,7 @@ import Title from '../components/text/Title';
 import Text from '../components/text/Text';
 import Swal from 'sweetalert2';
 import { co } from '../styles/theme';
+import { Mixpanel } from '../components/mixpanel';
 
 const step_images = [
   'https://ssvmx.s3.us-east-2.amazonaws.com/step1.png',
@@ -29,6 +30,9 @@ const fireImagePopUp = (number) => {
 };
 
 export default function ContactoDiputado() {
+  useEffect(() => {
+    Mixpanel.track('New visitor');
+  }, []);
   return (
     <>
       <Navbar />
